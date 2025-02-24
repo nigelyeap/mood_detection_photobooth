@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webcam App</title>
+</head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./node_modules/face-api.js/dist/face-api.js"></script>
+    <script src="renderer.js" type = "module"></script>
+    <div style = "text-align: center";>
+    <h1>Webcam App</h1>
+    <video id="webcamVideo" autoplay></video>
+    <canvas id="filteredCanvas"></canvas>
+    <br>
+    <select id="filterSelect">
+        <option value="none">No Filter</option>
+        <option value="grayscale">Grayscale</option>
+        <option value="sepia">Sepia</option>
+        <option value="invert">Invert</option>
+    </select>
+    <button id="captureDownloadBtn">Capture and Download Image</button>
+    <br>
+    <div id="moodDisplay"></div>
+    <canvas id="canvas" style="display: none;"></canvas>
+    </div>
+    <label>
+    <input type="checkbox" id="moodToggle"> Enable Mood Detection
+    </label>
+</body>
+</html>
