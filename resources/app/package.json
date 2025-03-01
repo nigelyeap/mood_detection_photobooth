@@ -1,0 +1,32 @@
+{
+  "name": "smart-webcam-filter",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . PhotoBooth && cp photoboothlogo.icns resources/app/photoboothlogo.icns"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nigelyeap/smart_webcam_filter.git"
+  },
+  "keywords": [
+    "-"
+  ],
+  "author": "nigel yeap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nigelyeap/smart_webcam_filter/issues"
+  },
+  "homepage": "https://github.com/nigelyeap/smart_webcam_filter#readme",
+  "dependencies": {
+    "canvas": "^3.1.0",
+    "face-api.js": "^0.22.2",
+    "node-webcam": "^0.8.2"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-packager": "^17.1.2"
+  }
+}

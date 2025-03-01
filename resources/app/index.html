@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body class = "spectrum-background">
+    <title>SMART PHOTOBOOTH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./node_modules/face-api.js/dist/face-api.js"></script>
+    <script src="renderer.js" type = "module"></script>
+    <div style = "text-align: center";>
+    <h1>SMART PHOTOBOOTH</h1>
+    <div id="countdownDisplay" style="font-size: 48px; display: flex;flex-direction:column;min-height:100%;overflow:hidden"></div>
+        <div id="appContainer">
+            <video id="webcamVideo" autoplay hidden></video>
+            <canvas id="filteredCanvas" style = "border: 50px black;"></canvas>
+            <div id="filmstripContainer" style="position: relative; width: 150px; height: 480px; margin-left: 20px;">
+                <img id="filmstripImage" src="filmstrip.png" style="width: 100%; height: 100%; position: absolute; top: 0; left: 500px; pointer-events: none;">
+                <div id="photoSlots" style="position: absolute; top: 0; left: 500px; width: 100%; height: 100%; display: flex; flex-direction: column; pointer-events: none;">
+                    <img class="photoSlot" style="width: 86.486%; height: 20%; object-fit: cover; margin-top: 5.5%;margin-bottom:3.75%">
+                    <img class="photoSlot" style="width: 86.486%; height: 20%; object-fit: cover; margin: 3.75% 0;">
+                    <img class="photoSlot" style="width: 86.486%; height: 20%; object-fit: cover; margin: 3.75% 0;">
+                    <img class="photoSlot" style="width: 86.486%; height: 20%; object-fit: cover; margin: 3.75% 0;">
+                </div>
+            </div>
+        </div>
+    <br>
+    <div id="filterButtons">
+        <input type="radio" id="noneFilter" name="filter" value="none" checked>
+        <label for="noneFilter">No Filter</label>
+    
+        <input type="radio" id="grayscaleFilter" name="filter" value="grayscale">
+        <label for="grayscaleFilter">Black & White</label>
+    
+        <input type="radio" id="sepiaFilter" name="filter" value="sepia">
+        <label for="sepiaFilter">Sepia</label>
+        <br>
+        <input type="radio" id="invertFilter" name="filter" value="invert">
+        <label for="invertFilter">Invert</label>
+
+        <input type="radio" id="vintageFilter" name="filter" value="vintage">
+        <label for="vintageFilter">Vintage</label>
+
+        <input type="radio" id="fisheyeFilter" name="filter" value="fisheye">
+        <label for="fisheyeFilter">Goofy</label>
+        <br>
+        <input type="radio" id="lomoFilter" name="filter" value="lomo">
+        <label for="lomoFilter">Romantic</label>
+
+        <input type="radio" id="oldFilter" name="filter" value="old">
+        <label for="oldFilter">Old</label>
+
+        <input type="radio" id="blemFilter" name="filter" value="blem">
+        <label for="blemFilter">-</label>
+
+    </div>
+    <br>
+    <button id="captureDownloadBtn">Capture and Download Image</button>
+    <button id="photoshootBtn">Start Photoshoot</button>
+
+    <div id="moodDisplay"></div>
+    <canvas id="canvas" style="display: none;"></canvas>
+    </div>
+    <label>
+    </label>
+</body>
+</html>
